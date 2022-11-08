@@ -16,8 +16,7 @@ function Form() {
     let handleSubmit = (e) => {
         e.preventDefault();
         let queryObj = { name: data};
-        console.log(queryObj);
-        makePostRequest('https://localhost:5000/test', queryObj);
+        makePostRequest('http://localhost:5000/test', queryObj);
     }
   return (
     <>
