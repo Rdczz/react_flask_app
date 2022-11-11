@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_flask_app/static/css/main.eb671c79.css",
+    "main.js": "/react_flask_app/static/js/main.343c981a.js",
+    "static/js/787.cda612ba.chunk.js": "/react_flask_app/static/js/787.cda612ba.chunk.js",
+    "index.html": "/react_flask_app/index.html",
+    "main.eb671c79.css.map": "/react_flask_app/static/css/main.eb671c79.css.map",
+    "main.343c981a.js.map": "/react_flask_app/static/js/main.343c981a.js.map",
+    "787.cda612ba.chunk.js.map": "/react_flask_app/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb671c79.css",
+    "static/js/main.343c981a.js"
+  ]
+}

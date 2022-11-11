@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.eb671c79.css","mappings":"AAAA,aACI,gBAAiB,CACjB,iBACF","sources":["App.css"],"sourcesContent":[".form-select {\n    max-height: 200px;\n    overflow-y: scroll;\n  }"],"names":[],"sourceRoot":""}
