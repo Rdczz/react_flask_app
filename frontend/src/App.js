@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Form from './components/Form';
-
+import './App.css';
 
 function App() {
   return (
