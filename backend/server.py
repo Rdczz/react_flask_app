@@ -1,18 +1,32 @@
-from wsgiref import headers
-from flask import Flask, jsonify, request
-from flask_cors import CORS, cross_origin
+from email import header
+from socket import socket
+from urllib import request
+from flask import Flask,jsonify
+from flask_socketio import SocketIO,send
 from model import detect_and_translate
+from flask_cors import CORS,cross_origin
 
 app = Flask(__name__)
-CORS(app)
- 
-@app.route('/test', methods =['GET','POST'])
-@cross_origin(headers=["Content-Type"])
-def test():
-   data = request.json['name']
-   lang = request.json['lang']
-   res = detect_and_translate(data,lang,'no')
-   return jsonify({"Result":res})
- 
-if __name__ == '__main__':
-    app.run(debug = True)
+socketIo = SocketIO(app,cors_allowed_origins="*")
+app.debug =True
+app.host = 'localhost'
+#CORS(app)
+
+@app.route('/test',methods=['POST'])
+#@cross_origin(headers=["content-Type"])
+def translate():
+       data = request.json['msg']
+       res = detect_and_translate(data,"te","no");       
+       return jsonify({"result":res})
+    
+@socketIo.on("message")
+def handleMessage(msg):
+   data = msg['msg']
+   lan = msg['lan']
+   res = detect_and_translate(data,lan,"no")
+   print(res)
+   send(res,broadcast=True)
+   return None
+
+if __name__ == "__main__":
+   socketIo.run(app)
